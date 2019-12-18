@@ -23,6 +23,7 @@ namespace SimpleCalculator
     public sealed partial class MainPage : Page
     {
         List<String> numbers = new List<String>();
+        List<String> History = new List<String>();
 
         string joiner;
         int[] numholder;
@@ -144,6 +145,34 @@ namespace SimpleCalculator
             display.Items.Add(joiner);
         }
 
+
+        private void timess(object sender, RoutedEventArgs e)
+        {
+            display.Items.Clear();
+            numbers.Add("*");
+            joiner = string.Join("", numbers);
+            display.Items.Add(joiner);
+        }
+
+
+        private void dividee(object sender, RoutedEventArgs e)
+        {
+            display.Items.Clear();
+            numbers.Add("/");
+            joiner = string.Join("", numbers);
+            display.Items.Add(joiner);
+        }
+
+        private void subtract(object sender, RoutedEventArgs e)
+        {
+            display.Items.Clear();
+            numbers.Add("-");
+            joiner = string.Join("", numbers);
+            display.Items.Add(joiner);
+        }
+
+
+
         private void equal(object sender, RoutedEventArgs e)
         {
             joiner = "";
@@ -166,9 +195,9 @@ namespace SimpleCalculator
 
 
 
-                if (numberHolder1[i].Contains("+"))
+                if (numberHolder1[i].Contains("+")|| numberHolder1[i].Contains("-")|| numberHolder1[i].Contains("/")|| numberHolder1[i].Contains("*"))
                 {
-                    condition = "+";
+                    condition = numberHolder1[i];
 
                     for (int j = 0; j < counter; j++)
                     {
@@ -194,17 +223,61 @@ namespace SimpleCalculator
 
 
             if (condition == "+")
+            {
                 sum = Convert.ToInt32(section1) + Convert.ToInt32(section2);
+                History.Add(section1 +condition+section2+"="+sum);
 
-            display.Items.Add(sum);
+            }
+
+            if (condition == "-")
+            {
+                sum = Convert.ToInt32(section1) - Convert.ToInt32(section2);
+                History.Add(section1 + condition + section2 + "=" + sum);
+
+            }
+
+            if (condition == "*")
+            {
+                sum = Convert.ToInt32(section1) * Convert.ToInt32(section2);
+                History.Add(section1 + condition + section2 + "=" + sum);
+
+            }
+
+            if (condition == "/")
+            {
+                sum = Convert.ToInt32(section1) / Convert.ToInt32(section2);
+                History.Add(section1 + condition + section2 + "=" + sum);
+
+            }
+
+
+
+            display.Items.Add(section1 +condition+section2+"="+sum);
+
+
+          //Add the history here
+
+
+
+            //this code is not nessessary as there is a dedicated button to clear the list which is the clearjoiner()
+            // clearing is required as the program does not progress from previously stored numbers.
+            numbers.Clear();
+            joiner = "";
 
 
         }
 
         private void clearJoiner(object sender, RoutedEventArgs e)
         {
+            //clear button used to temporarily correct calculators from adding onto previous sums ( which created an error as this programs only operates with 2 numbers)
 
+            numbers.Clear();
+            joiner="";
+
+            display.Items.Add(joiner);
 
         }
+
+       
     }
 }

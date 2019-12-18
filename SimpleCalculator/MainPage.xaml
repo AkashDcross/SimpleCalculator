@@ -41,7 +41,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="clear" Content="clear" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180" Click="clearJoiner"/>
             <Button x:Name="num0" Content="0" Grid.Column="1"  Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180" Click="display0"/>
-            <Button x:Name="times" Content="*" Grid.Column="2" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180"/>
+            <Button x:Name="times" Content="*" Grid.Column="2" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180" Click="timess"/>
             <Button x:Name="equals" Content="=" Grid.Column="3" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180" Click="equal"/>
 
             <Button x:Name="num1" Content="1" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="display1"/>
@@ -52,10 +52,10 @@
             <Button x:Name="num4" Content="4" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="display4"/>
             <Button x:Name="num5" Content="5" Grid.Column="1"  Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   MaxHeight="180" Click="display5"/>
             <Button x:Name="num6" Content="6" Grid.Column="2" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="display6"/>
-            <Button x:Name="minus" Content="-" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180"/>
+            <Button x:Name="minus" Content="-" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="subtract"/>
             <Button x:Name="num8" Content="8" Grid.Column="1"  Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="display8"/>
             <Button x:Name="num9" Content="9" Grid.Column="2" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxHeight="180" Click="display9"/>
-            <Button x:Name="divide" Content="/" Grid.Column="3" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180"/>
+            <Button x:Name="divide" Content="/" Grid.Column="3" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  MaxHeight="180" Click="dividee"/>
           
                 <Button x:Name="num7" Content="7" Grid.Row="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" MaxHeight="180" Click="display7"/>
 
