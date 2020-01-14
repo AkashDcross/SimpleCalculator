@@ -30,6 +30,7 @@ namespace SimpleCalculator
 
         public MainPage()
         {
+            //fixing font size for default window
             this.InitializeComponent();
             display.FontSize = 40;
             num0.FontSize = 40;
@@ -51,6 +52,8 @@ namespace SimpleCalculator
             times.FontSize = 40;
         }
 
+
+        // ------------ Here we are concatenating joiner every time the user presses a number-----------
         private void display0(object sender, RoutedEventArgs e)
         {
             display.Items.Clear();
@@ -171,6 +174,7 @@ namespace SimpleCalculator
             display.Items.Add(joiner);
         }
 
+        //-----------------------------------------------------------------------------------------
 
 
         private void equal(object sender, RoutedEventArgs e)
@@ -188,6 +192,7 @@ namespace SimpleCalculator
             int counter = 0;
             String[] numberHolder1 = numbers.ToArray();
 
+            //Here is a construct which uses 2 loops to get the first section and second section of the sum  ( 232323 + 123123)
             for (int i = 0; i < numberHolder1.Length; i++)
 
 
@@ -274,7 +279,7 @@ namespace SimpleCalculator
             numbers.Clear();
             joiner="";
 
-            display.Items.Add(joiner);
+            display.Items.Clear();
 
         }
 
