@@ -186,7 +186,7 @@ namespace SimpleCalculator
 
             string section1 = "";
             string section2 = "";
-            int sum = 0;
+            double sum = 0;
 
 
             int counter = 0;
@@ -250,7 +250,7 @@ namespace SimpleCalculator
 
             if (condition == "/")
             {
-                sum = Convert.ToInt32(section1) / Convert.ToInt32(section2);
+                sum = Convert.ToDouble(section1) / Convert.ToInt32(section2);
                 History.Add(section1 + condition + section2 + "=" + sum);
 
             }
@@ -283,6 +283,34 @@ namespace SimpleCalculator
 
         }
 
-       
+        private void RandomSum(object sender, RoutedEventArgs e)
+        {
+            display.Items.Clear();
+            Random ran = new Random();
+            double randomNum;
+
+            String[] operatators = {"+","-","/","*"};
+            int ranSelector = (ran.Next(0,operatators.Length));
+            String ranOperator = Convert.ToString(operatators[ranSelector]);
+
+            
+
+
+            for (int i=1; i <= 2; i++)
+            {
+                randomNum = ran.Next(0, 9);
+                numbers.Add(randomNum.ToString());
+
+                if (i == 1) { numbers.Add(ranOperator); }
+            }
+
+
+            
+            
+            joiner = string.Join("", numbers);
+            display.Items.Add(joiner);
+            equal(null,null);
+
+        }
     }
 }
